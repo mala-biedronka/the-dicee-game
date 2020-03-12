@@ -1,3 +1,37 @@
+//The fourth solution
+let leftRandomNumber = Math.floor(Math.random() * 6) + 1;
+let rightRandomNumber = Math.floor(Math.random() * 6) + 1;
+
+let leftImage = `images/dice${leftRandomNumber}.png`;
+let rightImage= `images/dice${rightRandomNumber}.png`;
+
+let leftDice = document.querySelectorAll("img")[0];
+let rightDice = document.querySelectorAll("img")[1];
+
+function changeLeftImage (image) {
+        leftDice.setAttribute("src", image);
+}
+
+function changeRightImage (image) {
+        rightDice.setAttribute("src", image);
+}
+
+function whoWins () {
+        if (leftRandomNumber > rightRandomNumber) {
+                document.querySelector("h1").textContent = "🚩 Player 1 wins!";
+        } else if (leftRandomNumber < rightRandomNumber) {
+                document.querySelector("h1").textContent = "Player 2 wins! 🚩 ";
+        } else {
+                document.querySelector("h1").textContent = "🚩 Draw! 🚩";
+        }
+}
+
+changeLeftImage(leftImage);
+changeRightImage(rightImage);
+whoWins();
+
+
+
 //The first solution
 
 // let randomNumber1 = Math.floor((Math.random() * 6)) + 1;
@@ -79,6 +113,8 @@
 //
 
 
+
+
 //The third solution
 // var randomNumber1 = Math.floor(Math.random() * 6) + 1; //1-6
 //
@@ -108,19 +144,3 @@
 // else {
 //     document.querySelector("h1").innerHTML = "Draw!";
 // }
-
-
-//The fourth solution
-let randomNumber = Math.floor(Math.random() * 6) + 1;
-let imageNumber = "images/dice" + randomNumber + ".png";
-
-let leftDice = document.querySelectorAll("img")[0];
-
-function changeLeftImage (image) {
-        leftDice.setAttribute("src", "images/dice" + randomNumber + ".png");
-}
-changeLeftImage(imageNumber);
-
-
-
-let rightDice = document.querySelectorAll("img")[1];
